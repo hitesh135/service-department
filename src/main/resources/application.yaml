@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: service-department
+  config:
+    import: "optional:configserver:http://localhost:8088/config/"
+  boot:
+    admin:
+      client:
+        url: "http://localhost:8085/sb-admin"
+#  zipkin:
+#    enabled: true
+#    base-url: "http://localhost:9411/"
+#    service:
+#      name: service-department
+#
+#
+#logging:
+#  pattern:
+#    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+
+management:
+  endpoint:
+    health:
+      show-details: ALWAYS
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+#  spring.boot.admin.client.url=http://10.170.5.252:8584/ans-admin
+#  management.endpoints.web.exposure.include=*
+#  management.endpoint.health.show-details=always
+
